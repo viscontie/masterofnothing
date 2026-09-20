@@ -10955,52 +10955,12 @@ article p.lede::first-letter {
   margin: 3rem 0 1.5rem;
 }
 
-/* ---------- Homepage: About Me + photo placeholder ---------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.about-grid p {
+/* ---------- Homepage: About Me ---------- */
+.about-text p {
   font-size: 1.15rem;
 }
-.photo-placeholder {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border: 1px solid var(--rule-strong);
-  background: var(--newsprint-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1.5rem;
-  font-family: "Barlow Condensed", sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--byline);
-  border-radius: 2px;
-  transform: rotate(-2deg);
-  box-shadow: 0 10px 22px rgba(43, 36, 28, 0.18);
-  transition: transform 0.2s ease;
-}
-.photo-placeholder:hover {
-  transform: rotate(0deg);
-}
-.photo-placeholder::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-3deg);
-  width: 70px;
-  height: 26px;
-  background: var(--burnt-orange-soft);
-  opacity: 0.85;
-}
-.photo-placeholder span {
-  display: block;
+.hero-photo-wrap {
+  margin: 0 0 2.5rem;
 }
 .photo-caption {
   font-family: "Fraunces", serif;
@@ -11009,7 +10969,6 @@ article p.lede::first-letter {
   color: var(--byline);
   text-align: center;
   margin-top: 0.75rem;
-  transform: rotate(-2deg);
 }
 
 /* ---------- Dispatch box (personal "vitals" stat box) ---------- */
@@ -11046,17 +11005,6 @@ article p.lede::first-letter {
 .dispatch-row span:last-child {
   font-weight: 600;
   color: var(--ink);
-}
-
-@media (max-width: 767.98px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  .photo-placeholder {
-    aspect-ratio: 16 / 9;
-    max-width: 320px;
-    margin: 0 auto;
-  }
 }
 
 /* ---------- Department grid (homepage section directory) ---------- */
@@ -11196,6 +11144,41 @@ article p.lede::first-letter {
 }
 .scatter-photo.size-lg .scatter-photo-frame {
   aspect-ratio: 4 / 5;
+}
+.scatter-photo.size-hero {
+  width: min(85%, 440px);
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+.scatter-photo.size-hero .scatter-photo-frame {
+  aspect-ratio: 4 / 5;
+}
+.tilt-hero {
+  transform: rotate(-1.5deg);
+}
+/* Gallery: each photo sits alone on its own row, aligned across the page width */
+.photo-gallery {
+  margin: 8px 0 6px;
+}
+.photo-row {
+  width: 100%;
+  margin: 0 0 30px;
+}
+.photo-row.align-left {
+  text-align: left;
+}
+.photo-row.align-center {
+  text-align: center;
+}
+.photo-row.align-right {
+  text-align: right;
+}
+.photo-row .scatter-photo {
+  display: inline-block;
+  float: none;
+  margin: 0;
+  text-align: left;
 }
 /* Tilts (shared with other tilted elements) */
 .tilt-a {
