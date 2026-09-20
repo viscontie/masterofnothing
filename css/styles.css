@@ -11127,10 +11127,93 @@ article p.lede::first-letter {
   }
 }
 
+/* ---------- Scattered mini photos (homepage decoration) ---------- */
+.scatter-photos {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 28px 0 8px;
+}
+.mini-photo {
+  position: relative;
+  width: 108px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--rule-strong);
+  background: var(--newsprint-2);
+  border-radius: 2px;
+  box-shadow: 4px 5px 0 rgba(43, 36, 28, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--byline);
+  transition: transform 0.2s ease;
+}
+.mini-photo::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 42px;
+  height: 15px;
+  background: var(--burnt-orange-soft);
+  opacity: 0.85;
+}
+.mini-photo:hover {
+  transform: rotate(0deg) !important;
+}
+.mini-photo.tilt-a {
+  transform: rotate(-5deg);
+}
+.mini-photo.tilt-b {
+  transform: rotate(4deg);
+}
+.mini-photo.tilt-c {
+  transform: rotate(-2deg);
+}
+.mini-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Department card thumbnail (featured post photo) ---------- */
+.dept-thumb {
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--rule-strong);
+  background: var(--newsprint-2);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--byline);
+  box-shadow: 3px 4px 0 rgba(43, 36, 28, 0.1);
+  overflow: hidden;
+}
+.dept-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ---------- Category section pages ---------- */
 .category-list .post-preview {
   padding: 20px 0;
   border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 100px;
 }
 .category-list .post-preview:first-child {
   padding-top: 0;
