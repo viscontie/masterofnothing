@@ -10955,12 +10955,52 @@ article p.lede::first-letter {
   margin: 3rem 0 1.5rem;
 }
 
-/* ---------- Homepage: About Me ---------- */
-.about-text p {
+/* ---------- Homepage: About Me + photo placeholder ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.about-grid p {
   font-size: 1.15rem;
 }
-.hero-photo-wrap {
-  margin: 0 0 2.5rem;
+.photo-placeholder {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--rule-strong);
+  background: var(--newsprint-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--byline);
+  border-radius: 2px;
+  transform: rotate(-2deg);
+  box-shadow: 0 10px 22px rgba(43, 36, 28, 0.18);
+  transition: transform 0.2s ease;
+}
+.photo-placeholder:hover {
+  transform: rotate(0deg);
+}
+.photo-placeholder::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 70px;
+  height: 26px;
+  background: var(--burnt-orange-soft);
+  opacity: 0.85;
+}
+.photo-placeholder span {
+  display: block;
 }
 .photo-caption {
   font-family: "Fraunces", serif;
@@ -10969,6 +11009,7 @@ article p.lede::first-letter {
   color: var(--byline);
   text-align: center;
   margin-top: 0.75rem;
+  transform: rotate(-2deg);
 }
 
 /* ---------- Dispatch box (personal "vitals" stat box) ---------- */
@@ -11005,6 +11046,17 @@ article p.lede::first-letter {
 .dispatch-row span:last-child {
   font-weight: 600;
   color: var(--ink);
+}
+
+@media (max-width: 767.98px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .photo-placeholder {
+    aspect-ratio: 16 / 9;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 /* ---------- Department grid (homepage section directory) ---------- */
@@ -11075,137 +11127,60 @@ article p.lede::first-letter {
   }
 }
 
-/* ---------- Scattered photos (float within the About Me text) ---------- */
-.about-text {
-  display: flow-root; /* contains the floated photos without a manual clearfix */
+/* ---------- Scattered mini photos (homepage decoration) ---------- */
+.scatter-photos {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 28px 0 8px;
 }
-.scatter-photo {
+.mini-photo {
   position: relative;
-  margin: 6px 0 20px;
-  padding: 8px 8px 20px;
+  width: 108px;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--rule-strong);
   background: var(--newsprint-2);
   border-radius: 2px;
-  box-shadow: 5px 6px 0 rgba(43, 36, 28, 0.15);
+  box-shadow: 4px 5px 0 rgba(43, 36, 28, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--byline);
   transition: transform 0.2s ease;
 }
-.scatter-photo:hover {
-  transform: rotate(0deg) !important;
-  z-index: 2;
-}
-.scatter-photo .scatter-photo-frame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: var(--newsprint-2);
-}
-.scatter-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.scatter-photo::before {
+.mini-photo::before {
   content: "";
   position: absolute;
-  top: -11px;
+  top: -9px;
   left: 50%;
   transform: translateX(-50%) rotate(-4deg);
-  width: 52px;
-  height: 18px;
+  width: 42px;
+  height: 15px;
   background: var(--burnt-orange-soft);
   opacity: 0.85;
 }
-/* Float direction */
-.scatter-photo.float-left {
-  float: left;
-  margin-right: 26px;
+.mini-photo:hover {
+  transform: rotate(0deg) !important;
 }
-.scatter-photo.float-right {
-  float: right;
-  margin-left: 26px;
-}
-/* Sizes */
-.scatter-photo.size-sm {
-  width: 140px;
-}
-.scatter-photo.size-sm .scatter-photo-frame {
-  aspect-ratio: 1 / 1;
-}
-.scatter-photo.size-md {
-  width: 190px;
-}
-.scatter-photo.size-md .scatter-photo-frame {
-  aspect-ratio: 1 / 1;
-}
-.scatter-photo.size-lg {
-  width: 250px;
-}
-.scatter-photo.size-lg .scatter-photo-frame {
-  aspect-ratio: 4 / 5;
-}
-.scatter-photo.size-hero {
-  width: min(85%, 440px);
-  float: none;
-  margin: 0 auto;
-  display: block;
-}
-.scatter-photo.size-hero .scatter-photo-frame {
-  aspect-ratio: 4 / 5;
-}
-.tilt-hero {
-  transform: rotate(-1.5deg);
-}
-/* Gallery: each photo sits alone on its own row, aligned across the page width */
-.photo-gallery {
-  margin: 8px 0 6px;
-}
-.photo-row {
-  width: 100%;
-  margin: 0 0 30px;
-}
-.photo-row.align-left {
-  text-align: left;
-}
-.photo-row.align-center {
-  text-align: center;
-}
-.photo-row.align-right {
-  text-align: right;
-}
-.photo-row .scatter-photo {
-  display: inline-block;
-  float: none;
-  margin: 0;
-  text-align: left;
-}
-/* Tilts (shared with other tilted elements) */
-.tilt-a {
+.mini-photo.tilt-a {
   transform: rotate(-5deg);
 }
-.tilt-b {
+.mini-photo.tilt-b {
   transform: rotate(4deg);
 }
-.tilt-c {
+.mini-photo.tilt-c {
   transform: rotate(-2deg);
 }
-.tilt-d {
-  transform: rotate(6deg);
-}
-.tilt-e {
-  transform: rotate(-7deg);
-}
-@media (max-width: 700px) {
-  .scatter-photo {
-    float: none !important;
-    margin: 16px auto;
-    display: block;
-  }
-  .scatter-photo.size-lg,
-  .scatter-photo.size-md {
-    width: 200px;
-  }
+.mini-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---------- Department card thumbnail (featured post photo) ---------- */
