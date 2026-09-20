@@ -10553,14 +10553,15 @@ textarea.form-control-lg {
    ========================================================= */
 
 :root {
-  --newsprint: #ece6d7;
-  --newsprint-2: #e4ddca;
-  --ink: #1c1a16;
-  --ink-soft: #3a352c;
-  --oxblood: #7e1f1a;
-  --rule: #b8ae95;
-  --rule-strong: #1c1a16;
-  --byline: #6e6656;
+  --newsprint: #f1e9d8;
+  --newsprint-2: #e8dfc8;
+  --ink: #2b241c;
+  --ink-soft: #4a3f30;
+  --burnt-orange: #c1571d;
+  --burnt-orange-soft: #d97f42;
+  --rule: #c4a97e;
+  --rule-strong: #2b241c;
+  --byline: #7a6a4e;
 }
 
 body {
@@ -10586,14 +10587,14 @@ p a {
   color: var(--ink);
 }
 p a:hover {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 
 blockquote {
   font-family: "Fraunces", serif;
   font-style: italic;
   color: var(--ink-soft);
-  border-left: 3px solid var(--oxblood);
+  border-left: 3px solid var(--burnt-orange);
   padding-left: 1.25rem;
 }
 
@@ -10605,10 +10606,13 @@ blockquote {
   background-color: var(--ink);
   border-color: var(--ink);
   font-family: "Barlow Condensed", sans-serif;
+  border-radius: 4px;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 .btn-primary:hover {
-  background-color: var(--oxblood);
-  border-color: var(--oxblood);
+  background-color: var(--burnt-orange);
+  border-color: var(--burnt-orange);
+  transform: translateY(-2px) rotate(-1deg);
 }
 
 .form-floating input,
@@ -10667,7 +10671,7 @@ blockquote {
 }
 #mainNav .navbar-brand:hover,
 #mainNav .navbar-brand:focus {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 #mainNav .navbar-toggler {
   font-size: 0.75rem;
@@ -10686,7 +10690,7 @@ blockquote {
 }
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 @media (min-width: 992px) {
   #mainNav.is-fixed {
@@ -10701,12 +10705,17 @@ blockquote {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border-top: 4px double var(--rule-strong);
+  border-top: 4px double var(--burnt-orange);
   background-color: var(--newsprint);
 }
 footer .fa-stack {
   border: 1px solid var(--rule-strong);
-  border-radius: 0;
+  border-radius: 50%;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+footer a:hover .fa-stack {
+  transform: rotate(8deg) scale(1.08);
+  border-color: var(--burnt-orange);
 }
 footer .fa-stack .fa-circle {
   color: transparent;
@@ -10715,7 +10724,7 @@ footer .fa-stack-1x {
   color: var(--ink);
 }
 footer a:hover .fa-stack-1x {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 footer .text-muted {
   font-family: "Barlow Condensed", sans-serif;
@@ -10732,7 +10741,7 @@ header.masthead {
   padding-top: calc(6rem + 57px);
   padding-bottom: 3rem;
   background-color: var(--newsprint);
-  border-bottom: 4px double var(--rule-strong);
+  border-bottom: 4px double var(--burnt-orange);
 }
 header.masthead .page-heading,
 header.masthead .post-heading,
@@ -10769,6 +10778,12 @@ header.masthead .site-heading .subheading {
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+.fleuron {
+  display: inline-block;
+  color: var(--burnt-orange);
+  font-style: normal;
+  transform: rotate(-8deg);
 }
 header.masthead .post-heading h1 {
   font-family: "Fraunces", serif;
@@ -10823,7 +10838,7 @@ header.masthead .post-heading .meta a {
   font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--oxblood);
+  color: var(--burnt-orange);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -10834,8 +10849,10 @@ header.masthead .post-heading .meta a {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--oxblood);
+  color: var(--burnt-orange);
   margin-bottom: 6px;
+  display: inline-block;
+  transform: rotate(-1.5deg);
 }
 
 .vitals {
@@ -10881,7 +10898,7 @@ article p.lede::first-letter {
   float: left;
   padding-right: 10px;
   padding-top: 6px;
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 
 /* ---------- Post previews ---------- */
@@ -10891,7 +10908,7 @@ article p.lede::first-letter {
 .post-preview > a:focus,
 .post-preview > a:hover {
   text-decoration: none;
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 .post-preview > a > .post-title {
   font-family: "Fraunces", serif;
@@ -10900,6 +10917,11 @@ article p.lede::first-letter {
   font-size: 1.75rem;
   margin-top: 1rem;
   margin-bottom: 0.625rem;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.post-preview > a:hover > .post-title {
+  transform: rotate(-0.6deg);
 }
 .post-preview > a > .post-subtitle {
   font-family: "Fraunces", serif;
@@ -10929,7 +10951,7 @@ article p.lede::first-letter {
 /* ---------- Rule divider (used between page sections) ---------- */
 .archive-divider {
   border: none;
-  border-top: 4px double var(--rule-strong);
+  border-top: 4px double var(--burnt-orange);
   margin: 3rem 0 1.5rem;
 }
 
@@ -10944,6 +10966,7 @@ article p.lede::first-letter {
   font-size: 1.15rem;
 }
 .photo-placeholder {
+  position: relative;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--rule-strong);
   background: var(--newsprint-2);
@@ -10957,23 +10980,42 @@ article p.lede::first-letter {
   text-transform: uppercase;
   font-size: 0.85rem;
   color: var(--byline);
+  border-radius: 2px;
+  transform: rotate(-2deg);
+  box-shadow: 0 10px 22px rgba(43, 36, 28, 0.18);
+  transition: transform 0.2s ease;
+}
+.photo-placeholder:hover {
+  transform: rotate(0deg);
+}
+.photo-placeholder::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 70px;
+  height: 26px;
+  background: var(--burnt-orange-soft);
+  opacity: 0.85;
 }
 .photo-placeholder span {
   display: block;
 }
 .photo-caption {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 0.9rem;
   color: var(--byline);
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  transform: rotate(-2deg);
 }
 
 /* ---------- Dispatch box (personal "vitals" stat box) ---------- */
 .dispatch-box {
-  border: 1px solid var(--rule-strong);
+  border: 1px dashed var(--rule-strong);
+  border-radius: 6px;
   padding: 16px 18px;
   margin-top: 24px;
   font-family: "Barlow Condensed", sans-serif;
@@ -11021,14 +11063,26 @@ article p.lede::first-letter {
 .dept-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule-strong);
-  border-left: 1px solid var(--rule);
+  gap: 18px;
 }
 .dept-card {
   padding: 22px 20px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--newsprint-2);
+  box-shadow: 3px 4px 0 var(--rule);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.dept-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+.dept-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+.dept-card:hover {
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 4px 6px 0 var(--burnt-orange-soft);
+  border-color: var(--burnt-orange);
 }
 .dept-card .kicker {
   margin-bottom: 10px;
@@ -11044,7 +11098,7 @@ article p.lede::first-letter {
   color: var(--ink);
 }
 .dept-card h3 a:hover {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 .dept-card p {
   font-size: 0.95rem;
@@ -11060,7 +11114,7 @@ article p.lede::first-letter {
   color: var(--ink);
 }
 .dept-card .read-more:hover {
-  color: var(--oxblood);
+  color: var(--burnt-orange);
 }
 @media (max-width: 991.98px) {
   .dept-grid {
