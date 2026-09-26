@@ -11250,12 +11250,7 @@ article p.lede::first-letter {
   font-size: 1.9rem;
   line-height: 1.1;
   margin: 0 0 8px;
-}
-.feature-title a {
   color: var(--ink);
-}
-.feature-title a:hover {
-  color: var(--burnt-orange);
 }
 .feature-subtitle {
   font-family: "Fraunces", serif;
