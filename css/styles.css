@@ -11347,3 +11347,9 @@ article p.lede::first-letter {
   font-size: 0.9rem;
   color: var(--byline);
 }
+
+.side-gallery.gallery-compact {
+  max-width: 520px;
+  gap: 32px;
+  margin: 0 auto 2rem;
+}
