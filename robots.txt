@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viscontie.github.io/masterofnothing/sitemap.xml
