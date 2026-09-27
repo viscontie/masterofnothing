@@ -11252,6 +11252,12 @@ article p.lede::first-letter {
   margin: 0 0 8px;
   color: var(--ink);
 }
+.feature-title a {
+  color: var(--ink);
+}
+.feature-title a:hover {
+  color: var(--burnt-orange);
+}
 .feature-subtitle {
   font-family: "Fraunces", serif;
   font-style: italic;
@@ -11277,6 +11283,19 @@ article p.lede::first-letter {
   line-height: 1.65;
   color: var(--ink-soft);
   margin: 0;
+}
+.back-link {
+  display: inline-block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.back-link:hover {
+  color: var(--burnt-orange);
 }
 @media (max-width: 700px) {
   .feature-post,
