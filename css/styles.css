@@ -11312,6 +11312,9 @@ article p.lede::first-letter {
 }
 .recipe-steps {
   padding-left: 1.4rem;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--rule);
 }
 .recipe-ingredients li {
   margin-bottom: 4px;
