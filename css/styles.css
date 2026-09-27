@@ -11289,3 +11289,39 @@ article p.lede::first-letter {
     margin: 0 auto;
   }
 }
+.recipe-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--burnt-orange);
+  margin: 22px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--rule);
+}
+.recipe-ingredients,
+.recipe-steps {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+}
+.recipe-ingredients {
+  padding-left: 1.2rem;
+}
+.recipe-steps {
+  padding-left: 1.4rem;
+}
+.recipe-ingredients li {
+  margin-bottom: 4px;
+}
+.recipe-steps li {
+  margin-bottom: 10px;
+}
+.recipe-source {
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--byline);
+}
