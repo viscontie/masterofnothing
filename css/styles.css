@@ -11022,6 +11022,37 @@ article p.lede::first-letter {
   transform: rotate(-2deg);
 }
 
+/* ---------- Scatter row: a few tape-photos in a loose, staggered line ---------- */
+.scatter-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+.scatter-row .scatter-item {
+  width: 190px;
+}
+.scatter-row .framed-photo-inner {
+  aspect-ratio: 1 / 1;
+}
+.scatter-row .scatter-item:nth-child(2) {
+  margin-top: 30px;
+}
+.scatter-row .scatter-item:nth-child(3) {
+  margin-top: -16px;
+}
+@media (max-width: 700px) {
+  .scatter-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .scatter-row .scatter-item {
+    margin-top: 0 !important;
+    width: 220px;
+  }
+}
+
 /* Shared tilt utilities */
 .tilt-hero {
   transform: rotate(-2deg);
